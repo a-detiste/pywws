@@ -85,7 +85,7 @@ import os.path
 from threading import RLock
 from datetime import date, datetime, timedelta
 
-import pytz
+from pywws.timezone import time_zone
 
 from pywws.weatherstation import WSDateTime, WSFloat, WSInt, WSStatus
 
@@ -97,8 +97,8 @@ def _adapt_WSDateTime(dt):
     """
     try:
         ts = int(
-            (dt.replace(tzinfo=pytz.utc)
-            - datetime(1970,1,1,tzinfo=pytz.utc)
+            (dt.replace(tzinfo=time_zone.utc)
+            - datetime(1970,1,1,tzinfo=time_zone.utc)
             ).total_seconds()
         )
     except (OverflowError,OSError):
@@ -128,8 +128,6 @@ def _convert_WSFloat(b):
 def _convert_WSInt(b):
     """Return WSInt for the given input"""
     return WSInt(b)
-
-sqlite3.enable_shared_cache(True)
 
 sqlite3.register_adapter(datetime, _adapt_WSDateTime)
 sqlite3.register_adapter(WSDateTime, _adapt_WSDateTime)
