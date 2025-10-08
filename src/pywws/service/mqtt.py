@@ -244,8 +244,12 @@ class ToService(pywws.service.LiveDataService):
 
     @contextmanager
     def session(self):
-        session = mosquitto.Client(
-            self.params['client_id'], protocol=mosquitto.MQTTv31)
+        try:
+            session = mosquitto.Client(mosquitto.CallbackAPIVersion.VERSION1,
+                self.params['client_id'], protocol=mosquitto.MQTTv31)
+        except AttributeError:
+            session = mosquitto.Client(
+                self.params['client_id'], protocol=mosquitto.MQTTv31)
         if self.params['password']:
             session.username_pw_set(
                 self.params['user'], self.params['password'])
