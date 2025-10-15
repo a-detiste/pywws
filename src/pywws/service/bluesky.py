@@ -1,6 +1,6 @@
 # pywws - Python software for USB Wireless Weather Stations
 # http://github.com/jim-easterbrook/pywws
-# Copyright (C) 2008-24  pywws contributors
+# Copyright (C) 2008-25  pywws contributors
 
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -39,7 +39,7 @@ conditions every hour.
 Create an account
 -----------------
 
-You could post weather updates to your regular Bluesky but it may be 
+You could post weather updates to your regular Bluesky but it may be
 cleaner to have a separate account just for weather reports.
 
 The :py:mod:`pywws.service.bluesky` module requires you to install an
@@ -57,9 +57,9 @@ another computer and type the values into the ``weather.ini`` file using
 any text editor.
 
 Log into your Bluesky account in a browser and navigate to Settings ->
-Privacy and security -> App Passwords -> Add App Password. Give it a 
+Privacy and security -> App Passwords -> Add App Password. Give it a
 memorable name (or use a randomly generated one) and then make a note of
-the password in the next section; it won't be displayed again. This 
+the password in the next section; it won't be displayed again. This
 password will give access to your account, and should be kept
 confidential.
 
@@ -84,7 +84,7 @@ Now generate a skeet file from your template, for example::
     cat skeet.txt
 
 Post your first skeet
---------------------
+---------------------
 
 Now you are ready to run :py:mod:`pywws.service.bluesky`::
 
@@ -94,7 +94,7 @@ If this works, your new Bluesky account will have posted its first
 weather report. (You can delete the skeet.txt file now.)
 
 Add Bluesky posts to your hourly tasks
----------------------------------------
+--------------------------------------
 
 Edit the ``[hourly]`` section in ``weather.ini``. If your skeets include
 one or more graphs you need to add the graph templates to the ``plot``
