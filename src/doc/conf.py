@@ -1,6 +1,6 @@
 # pywws - Python software for USB Wireless Weather Stations
 # http://github.com/jim-easterbrook/pywws
-# Copyright (C) 2008-20  pywws contributors
+# Copyright (C) 2008-25  pywws contributors
 
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -41,7 +41,7 @@ on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
 
 # allow documentation to be compiled without installing dependencies
 for mod_name in ('hid', 'oauth2', 'mastodon', 'twitter', 'pytz',
-                 'paho', 'paho.mqtt.client', 'paramiko',
+                 'paho', 'paho.mqtt.client', 'paramiko', 'atprototools',
                  'usb', 'usb.core', 'usb.util', 'libusb1', 'usb1',
                  'daemon.daemon', 'daemon.runner'):
     sys.modules[mod_name] = Mock()
